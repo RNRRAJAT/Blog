@@ -35,7 +35,7 @@ const CreateBlog = () => {
   const createBlogHandler = async()=>{
       try {
           dispatch(setLoading(true))
-          const res = await axios.post(`https://blog-fxgk.onrender.com/blog`, {title,catagory},{
+          const res = await axios.post(`https://blog-fxgk.onrender.com/api/v1/blog`, {title,catagory},{
             headers:{
               "Content-Type":"application/json"
             }, 

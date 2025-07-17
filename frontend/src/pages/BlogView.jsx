@@ -65,7 +65,7 @@ const BlogView = () => {
             }
             const updatedBlogData = blog.map(p=>p._id === selectedBlog._id ? {
                 ...p,
-                likes:liked ? p.likes.filter(id=>id !==User._id):[...p.likes,user._id]
+                likes:liked ? p.likes.filter(id=>id !==user?._id):[...p.likes,user._id]
             }:p
         )
         toast.success(res.data.message)

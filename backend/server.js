@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname,"/frontend/dist")))
 // app.get("*",(_,res)=>{
 //     res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"))
 // })
-app.get("*", (_, res) => {
+app.get("/*", (_, res) => {
   res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 });
 

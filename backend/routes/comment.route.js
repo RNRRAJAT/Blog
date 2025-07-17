@@ -5,11 +5,11 @@ import { createComment, deleteComment, editComment, getAllCommentOnMyBlogs, getC
 const router=express.Router();
 
 // router.route("/register").post(register);
+router.get('/my-blogs/comments',isAuthenticated,getAllCommentOnMyBlogs)
 router.post('/:id/create',isAuthenticated, createComment)
 router.delete('/:id/delete', isAuthenticated, deleteComment)
 router.put('/:id/edit', isAuthenticated, editComment)
 router.route('/:id/comment/all').get(isAuthenticated, getCommentsOfPost)
 router.get('/:id/like',isAuthenticated,likeComment)
-router.get('/my-blogs/comments',isAuthenticated,getAllCommentOnMyBlogs)
 
 export default router;

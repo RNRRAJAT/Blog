@@ -42,9 +42,9 @@ const BlogView = () => {
                 const len=data.length
                 console.log(len);
                 
-                if(len){
+             
                     setCommentCount(len)
-                }
+                
             } catch (error) {
                 console.log(error);
                 

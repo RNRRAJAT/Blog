@@ -37,8 +37,11 @@ const BlogView = () => {
             try {
                 const res = await axios.get(`https://blog-lj36.onrender.com/api/v1/comment/${selectedBlog?._id}/comment/all`, { withCredentials: true })
                 const data = res.data.comments
-                // console.log(data);
+
+                console.log(data);
                 const len=data.length
+                console.log(len);
+                
                 if(len){
                     setCommentCount(len)
                 }

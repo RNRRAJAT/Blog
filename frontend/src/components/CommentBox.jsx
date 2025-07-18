@@ -136,7 +136,7 @@ const CommentBox = ({ selectedBlog }) => {
   useEffect(() => {
     const getAllCommentsOfBlog = async () => {
       try {
-        const res = await axios.get(`https://blog-fxgk.onrender.com/api/v1/comment/${selectedBlog._id}/comment/all`, { withCredentials: true })
+        const res = await axios.get(`https://blog-lj36.onrender.com/api/v1/comment/${selectedBlog._id}/comment/all`, { withCredentials: true })
         const data = res.data.comments
         // console.log(data);
 

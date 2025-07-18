@@ -71,7 +71,7 @@ const Profile = () => {
     console.log(input);
     try {
         dispatch(setLoading(true))
-        const res = await axios.put(`https://blog-fxgk.onrender.com/api/v1/user/profile/update`,formData,{
+        const res = await axios.put(`http://localhost:8000/api/v1/user/profile/update`,formData,{
           headers:{
             "Content-Type":"multipart/form-data"
           },

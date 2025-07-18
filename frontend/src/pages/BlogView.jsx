@@ -42,7 +42,6 @@ const BlogView = () => {
                 if(len){
                     setCommentCount(len)
                 }
-                dispatch(setComment(data))
             } catch (error) {
                 console.log(error);
                 

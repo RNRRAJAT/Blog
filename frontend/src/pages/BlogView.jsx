@@ -29,6 +29,27 @@ const BlogView = () => {
     const [blogLike,setBlogLike] = useState(selectedBlog.likes.length)
     const [liked,setLiked]= useState(selectedBlog?.likes.includes(user._id) || false)
     const dispatch = useDispatch()
+    const [commentCount,setCommentCount]=useState(0)
+
+    useEffect(()=>{
+
+        const getAllCommentsOfBlog = async () => {
+            try {
+                const res = await axios.get(`https://blog-lj36.onrender.com/api/v1/comment/${selectedBlog?._id}/comment/all`, { withCredentials: true })
+                const data = res.data.comments
+                // console.log(data);
+                const len=data.length
+                if(len){
+                    setCommentCount(len)
+                }
+                dispatch(setComment(data))
+            } catch (error) {
+                console.log(error);
+                
+            }
+        }
+        getAllCommentsOfBlog()
+    },[])
 
     const changeTimeFormat = (isDate)=>{
         const date = new Date(isDate);
@@ -139,7 +160,7 @@ const BlogView = () => {
                                 <span>{blogLike}</span></Button>
                             <Button variant="ghost" size="sm">
                                 <MessageSquare className='h-4 w-4'/>
-                                <span>1 Comments</span>
+                                <span>{commentCount} Comments</span>
                             </Button>
                         </div>
                         <div className='flex items-center space-x-2'>

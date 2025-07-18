@@ -195,7 +195,7 @@ const CommentBox = ({ selectedBlog }) => {
                               <Button variant="outline" className='cursor-pointer' onClick={() => setEditingCommentId(null)}>Cancel</Button>
                             </div>
                           </>
-                        ) : <p className='break-words whitespace-pre-wrap'>{item?.content}</p>
+                        ) : <p className='break-words whitespace-pre-wrap w-[170px] md:w-[500px]'>{item?.content}</p>
                       }
 
                       <div className='flex gap-5 items-center'>

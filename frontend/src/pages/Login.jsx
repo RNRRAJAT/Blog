@@ -29,7 +29,7 @@ const Login = () => {
   }
   const handleSubmit=async(e)=>{
     e.preventDefault();
-    console.log(input);
+    // console.log(input);
 
     try {
       dispatch(setLoading(true))
